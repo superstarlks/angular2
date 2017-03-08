@@ -9,16 +9,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var TutorialComponent = (function () {
     function TutorialComponent() {
-        this.showLineIf = false; // tao 1 bien 
-        this.color = "red"; // muon hien thi dong "red" thi bo red vao
-        this.colors = ["red", "green", "blue"];
+        this.cone = true;
+        this.ctwo = true;
+        this.style = "italic";
+        this.size = "30px";
     }
+    TutorialComponent.prototype.Toggle = function () {
+        this.cone = !this.cone;
+        this.ctwo = !this.ctwo;
+    };
     return TutorialComponent;
 }());
 TutorialComponent = __decorate([
     core_1.Component({
         selector: 'my-tutorial',
-        template: "<h2>{{title}}</h2>\n        <h3 *ngIf=\"showLineIf\">this is ngIf directive line.</h3>\n        <div [ngSwitch] = \"color\">\n            <p *ngSwitchCase=\"'red'\">this line color is red</p>\n            <p *ngSwitchCase=\"'blue'\">this line color is blue</p>\n            <p *ngSwitchCase=\"'green'\">this line color is green</p>\n            <p *ngSwitchDefault>invalid color</p>\n        </div>\n        <ul>\n            <li *ngFor=\"let color of colors\" >{{color}}</li>\n        </ul>\n    "
+        template: "<h2>{{title}}</h2>\n        <p [ngClass] = \"{classOne:cone, classTwo:ctwo}\" >this is ngClass style</p>\n        <button (click) = \"Toggle()\">Toggle</button>\n        <p [ngStyle] = \"{'font-style': style, 'font-size':size }\" >this is paragaph</p>\n    ",
+        styles: [
+            "\n        .classOne{\n            color: yellow;\n        }\n        .classTwo{\n            background-color: black;\n        }\n        "
+        ]
     })
 ], TutorialComponent);
 exports.TutorialComponent = TutorialComponent;
