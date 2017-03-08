@@ -19,7 +19,7 @@ var TutorialComponent = (function () {
 TutorialComponent = __decorate([
     core_1.Component({
         selector: 'my-tutorial',
-        template: "<h2>{{title}}</h2>\n        <button (click) = \"OnClick(name.value)\">click me</button>\n        <input type=\"text\" #name />\n    "
+        template: "<h2>{{title}}</h2>\n        <input type=\"text\" [(ngModel)] = \"fname\" />\n        <input type=\"text\" [(ngModel)] = \"lname\" />\n        <br/>\n        Fullname: {{fname}} {{lname}}\n    "
     })
 ], TutorialComponent);
 exports.TutorialComponent = TutorialComponent;
