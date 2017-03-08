@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = "kingcom!";
+        this.title = "TED";
         //property binding
         this.image = "http://img.f30.vnecdn.net/2017/03/08/xe-bien-do-3797-1488949522_490x294.jpg";
         this.welcometext = "welcome to kingcom vietnam";
@@ -19,7 +19,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n  <h1>Hell TED {{title}}</h1>\n  <img [src] = \"image\" />\n  <my-tutorial></my-tutorial>\n  <input type=\"text\" [value] =\"welcometext\" />\n  "
+        template: "\n  <h1>Hell {{title}}</h1>\n  <img [src] = \"image\" />\n  \n  <my-tutorial></my-tutorial>\n  <input type = \"text\" [value]= \"welcometext\" />\n  "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
