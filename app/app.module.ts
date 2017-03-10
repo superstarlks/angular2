@@ -7,4 +7,15 @@ import {FormsModule} from '@angular/forms';
   declarations: [ AppComponent],
   bootstrap:    [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {
+  public cities = [
+    {
+      Id:1,
+      Name: 'Hà Nội'
+    },
+    {
+      Id:2,
+      Name: 'Hồ Chí Minh'
+    }
+  ];
+}

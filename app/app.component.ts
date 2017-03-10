@@ -9,4 +9,15 @@ export class AppComponent {
    onSubmit(value: any) {
     console.log(value);
   }
+
+   public cities = [
+    {
+      Id:1,
+      Name: 'Hà Nội'
+    },
+    {
+      Id:2,
+      Name: 'Hồ Chí Minh'
+    }
+  ];
 }

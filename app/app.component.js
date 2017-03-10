@@ -10,6 +10,16 @@ var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
         this.title = "Hello TED channel";
+        this.cities = [
+            {
+                Id: 1,
+                Name: 'Hà Nội'
+            },
+            {
+                Id: 2,
+                Name: 'Hồ Chí Minh'
+            }
+        ];
     }
     AppComponent.prototype.onSubmit = function (value) {
         console.log(value);

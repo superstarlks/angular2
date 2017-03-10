@@ -12,6 +12,16 @@ var app_component_1 = require("./app.component");
 var forms_1 = require("@angular/forms");
 var AppModule = (function () {
     function AppModule() {
+        this.cities = [
+            {
+                Id: 1,
+                Name: 'Hà Nội'
+            },
+            {
+                Id: 2,
+                Name: 'Hồ Chí Minh'
+            }
+        ];
     }
     return AppModule;
 }());
