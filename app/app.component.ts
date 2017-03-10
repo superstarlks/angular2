@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
   `
 })
 export class AppComponent {
-    public title = "Hello TED channel"
+   public title = "Hello TED channel"
     public today = Date.now();
     public percentNumber:number = 1.2;
     public e: number = 2.718281828459045;
