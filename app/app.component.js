@@ -9,14 +9,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = "TED channel";
+        this.title = "Hello TED channel";
+        this.today = Date.now();
+        this.percentNumber = 1.2;
+        this.e = 2.718281828459045;
+        this.object = { foo: 'bar', baz: 'qux', nested: { xyz: 3, numbers: [1, 2, 3, 4, 5] } };
+        this.collection = ['a', 'b', 'c', 'd'];
     }
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n  <h1>Hell {{title}}</h1>  \n  <my-tutorial></my-tutorial>\n  "
+        template: "\n  <h1> {{title | uppercase}}</h1>  \n  <p>Date today: {{today | date:'shortDate' }}</p>\n  <p>Percent: {{percentNumber | percent}}</p>\n  <p>e (3.1-5): {{e | number}}</p>\n  <pre>{{object | json}}</pre>\n  <p>2 m\u0169 10 = {{2 | exponentialStrength:10}}</p>\n  <ul>\n    <li *ngFor=\"let i of collection | slice:1:3\">{{i}}</li>\n  </ul>\n  <my-tutorial></my-tutorial>\n  \n  "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
