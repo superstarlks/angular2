@@ -10,13 +10,22 @@ var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
         this.title = "TED channel";
+        this.agree = 0;
+        this.disgree = 0;
+        this.names = ["Mr A", "Mr B", "Mr C", "Mr D"];
     }
+    AppComponent.prototype.parentVote = function (agree) {
+        if (agree)
+            this.agree++;
+        else
+            this.disgree++;
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n  <h1>Hell {{title}}</h1>  \n  <my-tutorial></my-tutorial>\n  "
+        template: "\n  <h1>Hell {{title}}</h1>  \n  <input type=\"text\" #textname (keyup)=\"0\" />\n  <p>Agree number: {{agree}} - Disgree number: {{disgree}}</p>\n  <my-tutorial *ngFor=\"let person of names\" [name] = \"person\" (onVote) = \"parentVote($event)\" ></my-tutorial>\n  "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
