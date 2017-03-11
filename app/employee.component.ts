@@ -18,7 +18,15 @@ export class EmployeeListComponent implements OnInit{
 
     //implements OnInit fai co phuong thuc này
     ngOnInit(){
-            this.employees = this.employeeService.GetList();
+            // this.employees = this.employeeService.GetList(); dung de tra ve 1 mang
+
+            //tra ve kieu json va bat loi (Handing error)
+            this.employeeService.GetList().subscribe((response:any)=>{
+                this.employees = response;
+                console.log(response);
+            }, error =>{
+                console.log(error);
+            });
     }
     //mang any 
     

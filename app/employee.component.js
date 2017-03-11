@@ -20,7 +20,15 @@ var EmployeeListComponent = (function () {
     }
     //implements OnInit fai co phuong thuc này
     EmployeeListComponent.prototype.ngOnInit = function () {
-        this.employees = this.employeeService.GetList();
+        // this.employees = this.employeeService.GetList(); dung de tra ve 1 mang
+        var _this = this;
+        //tra ve kieu json va bat loi (Handing error)
+        this.employeeService.GetList().subscribe(function (response) {
+            _this.employees = response;
+            console.log(response);
+        }, function (error) {
+            console.log(error);
+        });
     };
     return EmployeeListComponent;
 }());

@@ -1,3 +1,26 @@
+<!--
 <ul>
     <li *ngFor="let emp of employees" [value] ="emp.Id"  >{{emp.Name}}</li>
 </ul>
+-->
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Created At</td>
+            <td>Status</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.age}}</td>
+            <td>{{emp.createdAt | date}}</td>
+            <td>{{emp.status}}</td>
+        </tr>
+    </tbody>
+</table>

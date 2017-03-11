@@ -8,8 +8,11 @@ import {FormsModule} from '@angular/forms';
 import { EmployeeListComponent }   from './employee.component';
 import { EmployeeService } from './services/employee.service';
 
+// su dung http api, fai import HttpModule
+import {HttpModule} from '@angular/http';
+
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
+  imports:      [ BrowserModule, FormsModule , HttpModule ],
   declarations: [ AppComponent,EmployeeListComponent],
 
   //su dung service chung cho toan bo he thong
