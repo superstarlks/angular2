@@ -11,10 +11,13 @@ var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var forms_1 = require("@angular/forms");
 //su dung service cho toan bo he thong
+var home_component_1 = require("./home.component");
 var employee_component_1 = require("./employee.component");
 var employee_service_1 = require("./services/employee.service");
 // su dung http api, fai import HttpModule
 var http_1 = require("@angular/http");
+//su dung routing thi import tai day
+var app_routes_1 = require("./app.routes");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,8 +25,12 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule],
-        declarations: [app_component_1.AppComponent, employee_component_1.EmployeeListComponent],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, app_routes_1.appRoutes],
+        declarations: [
+            app_component_1.AppComponent,
+            employee_component_1.EmployeeListComponent,
+            home_component_1.HomeComponent
+        ],
         //su dung service chung cho toan bo he thong
         providers: [employee_service_1.EmployeeService],
         //end service
