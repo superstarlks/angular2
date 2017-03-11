@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 //su dung service cho toan bo he thong
 import { HomeComponent } from './home.component';
 import { EmployeeListComponent } from './employee.component';
+import { NotFoundComponent } from './notfound.component';
 import { EmployeeService } from './services/employee.service';
 
 // su dung http api, fai import HttpModule
@@ -21,7 +22,8 @@ import { appRoutes } from './app.routes';
   declarations: [
     AppComponent,
     EmployeeListComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent
   ],
 
   //su dung service chung cho toan bo he thong
@@ -30,5 +32,5 @@ import { appRoutes } from './app.routes';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  
+
 }
