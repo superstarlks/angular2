@@ -14,6 +14,8 @@ var forms_1 = require("@angular/forms");
 var home_component_1 = require("./home.component");
 var employee_component_1 = require("./employee.component");
 var employee_detail_component_1 = require("./employee-detail.component");
+var employee_overview_component_1 = require("./employee-overview.component");
+var employee_projects_component_1 = require("./employee-projects.component");
 var notfound_component_1 = require("./notfound.component");
 var employee_service_1 = require("./services/employee.service");
 // su dung http api, fai import HttpModule
@@ -33,6 +35,8 @@ AppModule = __decorate([
             employee_component_1.EmployeeListComponent,
             home_component_1.HomeComponent,
             employee_detail_component_1.EmployeeDetailComponent,
+            employee_overview_component_1.EmployeeOverviewComponent,
+            employee_projects_component_1.EmployeeProjectsComponent,
             notfound_component_1.NotFoundComponent
         ],
         //su dung service chung cho toan bo he thong
