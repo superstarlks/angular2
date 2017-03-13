@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 //su dung service cho toan bo he thong
 import { HomeComponent } from './home.component';
 import { EmployeeListComponent } from './employee.component';
+import { EmployeeDetailComponent } from './employee-detail.component';
 import { NotFoundComponent } from './notfound.component';
 import { EmployeeService } from './services/employee.service';
 
@@ -23,6 +24,7 @@ import { appRoutes } from './app.routes';
     AppComponent,
     EmployeeListComponent,
     HomeComponent,
+    EmployeeDetailComponent,
     NotFoundComponent
   ],
 

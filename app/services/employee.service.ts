@@ -23,7 +23,7 @@ export class EmployeeService {
 
 
     //goi api tu moc
-    private apiUrl = "http://58c363fa17bb2612000870e1.mockapi.io/api/employees";
+    private apiUrl = "http://58c363fa17bb2612000870e1.mockapi.io/api/employees/";
     constructor(private _http: Http) {
 
     }
@@ -31,5 +31,9 @@ export class EmployeeService {
     GetList(): Observable<any[]> {
         return this._http.get(this.apiUrl).map((response: Response) => response.json())
         //tuong ung co cac phuong thuc post,put,delete...
+    }
+
+    GetSingle(id: number): Observable<any> {
+        return this._http.get(this.apiUrl + id).map((response: Response) => response.json())
     }
 }

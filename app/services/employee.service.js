@@ -30,11 +30,14 @@ var EmployeeService = (function () {
         }
         */
         //goi api tu moc
-        this.apiUrl = "http://58c363fa17bb2612000870e1.mockapi.io/api/employees";
+        this.apiUrl = "http://58c363fa17bb2612000870e1.mockapi.io/api/employees/";
     }
     EmployeeService.prototype.GetList = function () {
         return this._http.get(this.apiUrl).map(function (response) { return response.json(); });
         //tuong ung co cac phuong thuc post,put,delete...
+    };
+    EmployeeService.prototype.GetSingle = function (id) {
+        return this._http.get(this.apiUrl + id).map(function (response) { return response.json(); });
     };
     return EmployeeService;
 }());
