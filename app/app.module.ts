@@ -10,9 +10,13 @@ import { EmployeeListComponent } from './employee.component';
 import { EmployeeDetailComponent } from './employee-detail.component';
 import { EmployeeOverviewComponent } from './employee-overview.component';
 import { EmployeeProjectsComponent } from './employee-projects.component';
-import { NotFoundComponent } from './notfound.component';
-import { EmployeeService } from './services/employee.service';
+import { LoginComponent } from './login.component';
 
+import { NotFoundComponent } from './notfound.component';
+
+import { EmployeeService } from './services/employee.service';
+import { LoginService } from './services/login.service';
+import {CheckLoginGuard} from './guards/check-login.guard'; 
 // su dung http api, fai import HttpModule
 import { HttpModule } from '@angular/http';
 
@@ -29,11 +33,12 @@ import { appRoutes } from './app.routes';
     EmployeeDetailComponent,
     EmployeeOverviewComponent,
     EmployeeProjectsComponent,
+    LoginComponent,
     NotFoundComponent
   ],
 
   //su dung service chung cho toan bo he thong
-  providers: [EmployeeService],
+  providers: [EmployeeService,LoginService,CheckLoginGuard],
   //end service
   bootstrap: [AppComponent]
 })

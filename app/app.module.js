@@ -16,8 +16,11 @@ var employee_component_1 = require("./employee.component");
 var employee_detail_component_1 = require("./employee-detail.component");
 var employee_overview_component_1 = require("./employee-overview.component");
 var employee_projects_component_1 = require("./employee-projects.component");
+var login_component_1 = require("./login.component");
 var notfound_component_1 = require("./notfound.component");
 var employee_service_1 = require("./services/employee.service");
+var login_service_1 = require("./services/login.service");
+var check_login_guard_1 = require("./guards/check-login.guard");
 // su dung http api, fai import HttpModule
 var http_1 = require("@angular/http");
 //su dung routing thi import tai day
@@ -37,10 +40,11 @@ AppModule = __decorate([
             employee_detail_component_1.EmployeeDetailComponent,
             employee_overview_component_1.EmployeeOverviewComponent,
             employee_projects_component_1.EmployeeProjectsComponent,
+            login_component_1.LoginComponent,
             notfound_component_1.NotFoundComponent
         ],
         //su dung service chung cho toan bo he thong
-        providers: [employee_service_1.EmployeeService],
+        providers: [employee_service_1.EmployeeService, login_service_1.LoginService, check_login_guard_1.CheckLoginGuard],
         //end service
         bootstrap: [app_component_1.AppComponent]
     })
