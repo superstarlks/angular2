@@ -13,6 +13,7 @@ export class EmployeeListComponent implements OnInit {
     public employees: any[];
     public pages: number[];
     public currentPage: number;
+    public keyword: string;
     //khai bao contructure
     //bien employeeService truc thuộc EmployeeService
     constructor(private employeeService: EmployeeService,
@@ -36,6 +37,15 @@ export class EmployeeListComponent implements OnInit {
         this.pages = [1, 2, 3, 4, 5]; //vd phan trang
     }
 
+    Search() {
+        this.employeeService.Search(this.keyword).subscribe((response: any) => {
+            this.employees = response;
+            console.log(response);
+        }, error => {
+            console.log(error);
+        });
+    }
+    
     Delete(id: number) {
         let confirmResult = confirm('Are you sure delete employee');
         if (confirmResult) {

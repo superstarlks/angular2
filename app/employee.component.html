@@ -3,8 +3,18 @@
     <li *ngFor="let emp of employees" [value] ="emp.Id"  >{{emp.Name}}</li>
 </ul>
 -->
+
+
 <div class="row">
-    <a [routerLink] = "['/employee-add']" class="btn btn-success" >Add New</a>
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <input type="text" [(ngModel)] = "keyword" name="keyword" />
+            <button class="btn btn-warning"  (click)="Search()" >Search</button>
+        </div>
+        <div class="col-md-4">
+            <a [routerLink]="['/employee-add']" class="btn btn-success">Add New</a>
+        </div>
+    </div>
 </div>
 <table class="table">
     <thead>
@@ -24,25 +34,25 @@
             <td>{{emp.createdAt | date}}</td>
             <td>{{emp.status}}</td>
             <td>
-                <a [routerLink] = "['/employee-detail', emp.id]" >Show detail</a>
-                <a class="btn btn-primary" [routerLink] = "['/employee-edit', emp.id]" >Edit</a>
-                <button class="btn btn-danger" (click)="Delete(emp.id)" >Del</button>
+                <a [routerLink]="['/employee-detail', emp.id]">Show detail</a>
+                <a class="btn btn-primary" [routerLink]="['/employee-edit', emp.id]">Edit</a>
+                <button class="btn btn-danger" (click)="Delete(emp.id)">Del</button>
             </td>
         </tr>
     </tbody>
 </table>
 <nav aria-label="Page navigation">
-  <ul class="pagination">
-    <li>
-      <a href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li *ngFor="let page of pages"><a [routerLink] ="['/employees']" [queryParams]="{pageNumber:page, filter:'a'}" >{{page}}</a></li>
-    <li>
-      <a href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
+    <ul class="pagination">
+        <li>
+            <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li *ngFor="let page of pages"><a [routerLink]="['/employees']" [queryParams]="{pageNumber:page, filter:'a'}">{{page}}</a></li>
+        <li>
+            <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
 </nav>
