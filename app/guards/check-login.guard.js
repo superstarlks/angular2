@@ -16,7 +16,10 @@ var CheckLoginGuard = (function () {
         this.loginService = loginService;
     }
     CheckLoginGuard.prototype.canActivate = function () {
-        return this.loginService.IsLogged();
+        var status = this.loginService.IsLogged();
+        if (status == false)
+            alert('Ban ko co quyen truy cap khi chua login!');
+        return status;
     };
     return CheckLoginGuard;
 }());

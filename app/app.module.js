@@ -21,6 +21,7 @@ var notfound_component_1 = require("./notfound.component");
 var employee_service_1 = require("./services/employee.service");
 var login_service_1 = require("./services/login.service");
 var check_login_guard_1 = require("./guards/check-login.guard");
+var check_save_form_guard_1 = require("./guards/check-save-form.guard");
 // su dung http api, fai import HttpModule
 var http_1 = require("@angular/http");
 //su dung routing thi import tai day
@@ -44,7 +45,7 @@ AppModule = __decorate([
             notfound_component_1.NotFoundComponent
         ],
         //su dung service chung cho toan bo he thong
-        providers: [employee_service_1.EmployeeService, login_service_1.LoginService, check_login_guard_1.CheckLoginGuard],
+        providers: [employee_service_1.EmployeeService, login_service_1.LoginService, check_login_guard_1.CheckLoginGuard, check_save_form_guard_1.CheckSaveFormGuard],
         //end service
         bootstrap: [app_component_1.AppComponent]
     })

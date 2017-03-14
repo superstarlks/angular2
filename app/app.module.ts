@@ -17,6 +17,7 @@ import { NotFoundComponent } from './notfound.component';
 import { EmployeeService } from './services/employee.service';
 import { LoginService } from './services/login.service';
 import {CheckLoginGuard} from './guards/check-login.guard'; 
+import {CheckSaveFormGuard} from './guards/check-save-form.guard'; 
 // su dung http api, fai import HttpModule
 import { HttpModule } from '@angular/http';
 
@@ -38,7 +39,7 @@ import { appRoutes } from './app.routes';
   ],
 
   //su dung service chung cho toan bo he thong
-  providers: [EmployeeService,LoginService,CheckLoginGuard],
+  providers: [EmployeeService,LoginService,CheckLoginGuard,CheckSaveFormGuard],
   //end service
   bootstrap: [AppComponent]
 })
