@@ -10,6 +10,8 @@ import { EmployeeListComponent } from './employee.component';
 import { EmployeeDetailComponent } from './employee-detail.component';
 import { EmployeeOverviewComponent } from './employee-overview.component';
 import { EmployeeProjectsComponent } from './employee-projects.component';
+import { EmployeeEditComponent } from './employee-edit.component';
+import { EmployeeAddComponent } from './employee-add.component';
 import { LoginComponent } from './login.component';
 
 import { NotFoundComponent } from './notfound.component';
@@ -34,6 +36,8 @@ import { appRoutes } from './app.routes';
     EmployeeDetailComponent,
     EmployeeOverviewComponent,
     EmployeeProjectsComponent,
+    EmployeeEditComponent,
+    EmployeeAddComponent,
     LoginComponent,
     NotFoundComponent
   ],

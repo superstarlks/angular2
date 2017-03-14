@@ -4,6 +4,8 @@ import { EmployeeListComponent } from './employee.component';
 import { EmployeeDetailComponent } from './employee-detail.component';
 import { EmployeeOverviewComponent } from './employee-overview.component';
 import { EmployeeProjectsComponent } from './employee-projects.component';
+import { EmployeeEditComponent } from './employee-edit.component';
+import { EmployeeAddComponent } from './employee-add.component';
 import { LoginComponent } from './login.component';
 import { CheckLoginGuard } from './guards/check-login.guard';
 import {CheckSaveFormGuard} from './guards/check-save-form.guard'; 
@@ -12,7 +14,8 @@ const routing: Routes = [
     { path: '', component: HomeComponent }, //ko can fai co dấu /, có sẽ có lỗi
     // redirectTo : {path: '', redirectTo:'employees' , pathMatch:'full'}, //ko can fai co dấu /, có sẽ có lỗi
     { path: 'employees', component: EmployeeListComponent, canActivate: [CheckLoginGuard] },
-
+    { path: 'employee-edit/:id', component: EmployeeEditComponent},
+    { path: 'employee-add', component: EmployeeAddComponent},
     {
         path: 'employee-detail/:id', component: EmployeeDetailComponent, canDeactivate: [CheckSaveFormGuard],
         children: [

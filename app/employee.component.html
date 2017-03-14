@@ -3,7 +3,9 @@
     <li *ngFor="let emp of employees" [value] ="emp.Id"  >{{emp.Name}}</li>
 </ul>
 -->
-
+<div class="row">
+    <a [routerLink] = "['/employee-add']" >Add New</a>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -23,6 +25,7 @@
             <td>{{emp.status}}</td>
             <td>
                 <a [routerLink] = "['/employee-detail', emp.id]" >Show detail</a>
+                <a [routerLink] = "['/employee-edit', emp.id]" >Edit</a>
             </td>
         </tr>
     </tbody>

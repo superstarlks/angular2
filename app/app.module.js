@@ -16,6 +16,8 @@ var employee_component_1 = require("./employee.component");
 var employee_detail_component_1 = require("./employee-detail.component");
 var employee_overview_component_1 = require("./employee-overview.component");
 var employee_projects_component_1 = require("./employee-projects.component");
+var employee_edit_component_1 = require("./employee-edit.component");
+var employee_add_component_1 = require("./employee-add.component");
 var login_component_1 = require("./login.component");
 var notfound_component_1 = require("./notfound.component");
 var employee_service_1 = require("./services/employee.service");
@@ -41,6 +43,8 @@ AppModule = __decorate([
             employee_detail_component_1.EmployeeDetailComponent,
             employee_overview_component_1.EmployeeOverviewComponent,
             employee_projects_component_1.EmployeeProjectsComponent,
+            employee_edit_component_1.EmployeeEditComponent,
+            employee_add_component_1.EmployeeAddComponent,
             login_component_1.LoginComponent,
             notfound_component_1.NotFoundComponent
         ],
