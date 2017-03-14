@@ -12,16 +12,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 //import service employee
 var employee_service_1 = require("./services/employee.service");
+var router_1 = require("@angular/router");
 var EmployeeListComponent = (function () {
     //khai bao contructure
     //bien employeeService truc thuộc EmployeeService
-    function EmployeeListComponent(employeeService) {
+    function EmployeeListComponent(employeeService, router, activatedRouter) {
         this.employeeService = employeeService;
+        this.router = router;
+        this.activatedRouter = activatedRouter;
     }
     //implements OnInit fai co phuong thuc này
     EmployeeListComponent.prototype.ngOnInit = function () {
-        // this.employees = this.employeeService.GetList(); dung de tra ve 1 mang
         var _this = this;
+        //lay link theo param
+        this.activatedRouter.queryParams.subscribe(function (params) {
+            _this.currentPage = params['pageNumber'] || 1; //neu null thi gan = 1
+            console.log(_this.currentPage);
+            console.log(params['filter']); //co the truyen them bien o day
+        });
+        // this.employees = this.employeeService.GetList(); dung de tra ve 1 mang
         //tra ve kieu json va bat loi (Handing error)
         this.employeeService.GetList().subscribe(function (response) {
             _this.employees = response;
@@ -29,6 +38,7 @@ var EmployeeListComponent = (function () {
         }, function (error) {
             console.log(error);
         });
+        this.pages = [1, 2, 3, 4, 5]; //vd phan trang
     };
     return EmployeeListComponent;
 }());
@@ -37,7 +47,8 @@ EmployeeListComponent = __decorate([
         selector: 'employee-list',
         templateUrl: './app/employee.component.html',
     }),
-    __metadata("design:paramtypes", [employee_service_1.EmployeeService])
+    __metadata("design:paramtypes", [employee_service_1.EmployeeService,
+        router_1.Router, router_1.ActivatedRoute])
 ], EmployeeListComponent);
 exports.EmployeeListComponent = EmployeeListComponent;
 //# sourceMappingURL=employee.component.js.map
