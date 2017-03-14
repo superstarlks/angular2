@@ -32,13 +32,29 @@ var EmployeeListComponent = (function () {
         });
         // this.employees = this.employeeService.GetList(); dung de tra ve 1 mang
         //tra ve kieu json va bat loi (Handing error)
+        this.LoadData();
+        this.pages = [1, 2, 3, 4, 5]; //vd phan trang
+    };
+    EmployeeListComponent.prototype.Delete = function (id) {
+        var _this = this;
+        var confirmResult = confirm('Are you sure delete employee');
+        if (confirmResult) {
+            this.employeeService.Delete(id).subscribe(function (response) {
+                if (response) {
+                    alert('delete ok!');
+                    _this.LoadData();
+                }
+            });
+        }
+    };
+    EmployeeListComponent.prototype.LoadData = function () {
+        var _this = this;
         this.employeeService.GetList().subscribe(function (response) {
             _this.employees = response;
             console.log(response);
         }, function (error) {
             console.log(error);
         });
-        this.pages = [1, 2, 3, 4, 5]; //vd phan trang
     };
     return EmployeeListComponent;
 }());

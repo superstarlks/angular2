@@ -4,7 +4,7 @@
 </ul>
 -->
 <div class="row">
-    <a [routerLink] = "['/employee-add']" >Add New</a>
+    <a [routerLink] = "['/employee-add']" class="btn btn-success" >Add New</a>
 </div>
 <table class="table">
     <thead>
@@ -25,7 +25,8 @@
             <td>{{emp.status}}</td>
             <td>
                 <a [routerLink] = "['/employee-detail', emp.id]" >Show detail</a>
-                <a [routerLink] = "['/employee-edit', emp.id]" >Edit</a>
+                <a class="btn btn-primary" [routerLink] = "['/employee-edit', emp.id]" >Edit</a>
+                <button class="btn btn-danger" (click)="Delete(emp.id)" >Del</button>
             </td>
         </tr>
     </tbody>
